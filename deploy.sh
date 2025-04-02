@@ -4,12 +4,9 @@ set -e
 
 npm run build
 
-cd dist
-
-git init
 git add -A
 git commit -m 'deploy'
 
-git push -f git@github.com:lucasn-e/schedule1-test.git main:gh-pages
+git subtree push --prefix dist origin gh-pages
 
 cd -

@@ -1,0 +1,239 @@
+* {
+   background-color: #333;
+}
+
+#app {
+   font-family: Avenir, Helvetica, Arial, sans-serif;
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+   text-align: center;
+   color: #dcdcdc;
+}
+
+.container {
+   display: flex;
+   justify-content: center;
+   flex-wrap: wrap;
+}
+
+.items {
+   display: grid;
+   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+.item-container {
+   padding: 10px;
+   border: 1px solid #dcdcdc86;
+}
+
+.item-container .image {
+   height: 100px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.item-container .image img {
+   height: 80px;
+}
+
+.name {
+   font-weight: 800;
+}
+
+.effects {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+}
+
+.effect {
+   font-weight: 800;
+   color: rgb(255, 204, 110);
+}
+
+.current-drug-container {
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   column-gap: 15px;
+   padding: 30px;
+   position: sticky;
+   top: 0;
+}
+
+.history {
+   justify-self: flex-end;
+}
+
+b {
+   margin-bottom: 10px;
+}
+
+.active.remove {
+   color: rgb(212, 86, 86);
+}
+
+.active.add {
+   color: rgb(80, 206, 80);
+}
+
+
+
+.current-drug {
+   max-width: 500px;
+   width: 400px;
+   padding: 25px;
+   border: 2px solid #dcdcdc;
+   border-radius: 2px;
+}
+
+.attribute-container {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   column-gap: 15px;
+}
+
+.attribute {
+   white-space: nowrap;
+}
+
+
+.Anti-Gravity {
+   color: rgb(35, 91, 203);
+}
+
+.Athletic {
+   color: rgb(117, 200, 253);
+}
+
+.Balding {
+   color: rgb(199, 146, 50);
+}
+
+.Bright-Eyed {
+   color: rgb(190, 247, 253);
+}
+
+.Calming {
+   color: rgb(254, 208, 155);
+}
+
+.Calorie-Dense {
+   color: rgb(254, 132, 244);
+}
+
+.Cyclopean {
+   color: rgb(254, 193, 116);
+}
+
+.Disorienting {
+   color: rgb(254, 117, 81);
+}
+
+.Electrifying {
+   color: rgb(85, 200, 253);
+}
+
+.Energizing {
+   color: rgb(154, 254, 109);
+}
+
+.Euphoric {
+   color: rgb(254, 234, 116);
+}
+
+.Explosive {
+   color: rgb(254, 75, 64);
+}
+
+.Focused {
+   color: rgb(117, 241, 253);
+}
+
+.Foggy {
+   color: rgb(176, 176, 175);
+}
+
+.Gingeritis {
+   color: rgb(254, 136, 41);
+}
+
+.Glowing {
+   color: rgb(133, 228, 89);
+}
+
+.Jennerising {
+   color: rgb(254, 141, 248);
+}
+
+.Laxative {
+   color: rgb(118, 60, 37);
+}
+
+.Lethal {
+   color: rgb(159, 43, 34);
+}
+
+.LongFaced {
+   color: rgb(254, 217, 97);
+}
+
+.Munchies {
+   color: rgb(201, 110, 87);
+}
+
+.Paranoia {
+   color: rgb(196, 103, 98);
+}
+
+.Refreshing {
+   color: rgb(178, 254, 152);
+}
+
+.Schizophrenia {
+   color: rgb(100, 90, 253);
+}
+
+.Sedating {
+   color: rgb(107, 95, 216);
+}
+
+.Seizure-Inducing {
+   color: rgb(254, 233, 0);
+}
+
+.Shrinking {
+   color: rgb(182, 254, 218);
+}
+
+.Slippery {
+   color: rgb(162, 223, 253);
+}
+
+.Smelly {
+   color: rgb(125, 188, 49);
+}
+
+.Sneaky {
+   color: rgb(123, 123, 123);
+}
+
+.Spicy {
+   color: rgb(254, 107, 76);
+}
+
+.Thought-Provoking {
+   color: rgb(254, 160, 203);
+}
+
+.Toxic {
+   color: rgb(95, 154, 49);
+}
+
+.TropicThunder {
+   color: rgb(254, 159, 71);
+}
+
+.Zombifying {
+   color: rgb(113, 171, 93);
+}

@@ -1,0 +1,114 @@
+{"additives": [
+   {
+      "name": "Cuke",
+      "image": "cola.png",
+      "effect": "Energizing",
+      "removes": ["Toxic", "Slippery", "Sneaky", "Foggy", "Gingeritis", "Munchies", "Euphoric", "Slippery"],
+      "adds": ["Euphoric", "Munchies", "Paranoia", "Cyclopean", "Thought-Provoking", "Athletic", "Laxative", "Athletic"]
+   },
+   {
+      "name": "Flu Medicine",
+      "image": "flu.png",
+      "effect": "Sedating",
+      "removes": ["Calming", "Athletic", "Thought-Provoking", "Cyclopean", "Munchies", "Laxative", "Euphoric", "Focused", "Electrifying", "Shrinking"],
+      "adds": ["Bright-Eyed", "Munchies", "Gingeritis", "Foggy", "Slippery", "Euphoric", "Toxic", "Calming", "Refreshing", "Paranoia"]
+   },
+   {
+      "name": "Gasoline",
+      "image": "gas.png",
+      "effect": "Toxic",
+      "removes": ["Energizing", "Gingeritis", "Jennerising", "Sneaky", "Munchies", "Energizing", "Euphoric", "Laxative", "Disorienting", "Paranoia", "Electrifying", "Shrinking"],
+      "adds": ["Euphoric", "Smelly", "Sneaky", "Tropic Thunder", "Sedating", "Spicy", "Spicy", "Foggy", "Glowing", "Calming", "Disorienting", "Focused"]
+   },
+   {
+      "name": "Donut",
+      "image": "donut.png",
+      "effect": "Calorie-Dense",
+      "removes": ["Balding", "Anti-Gravity", "Jennerising", "Focused", "Shrinking"],
+      "adds": ["Sneaky", "Slippery", "Gingeritis", "Euphoric", "Energizing"]
+   },
+   {
+      "name": "Energy Drink",
+      "image": "energy.png",
+      "effect": "Athletic",
+      "removes": ["Sedating","Euphoric","Spicy","Tropic Thunder","Glowing","Foggy","Disorienting","Schizophrenia","Focused"],
+      "adds": ["Munchies","Energizing","Euphoric","Sneaky","Disorienting","Laxative","Electrifying","Balding","Shrinking"]
+   },
+   {
+      "name": "Mouth Wash",
+      "image": "mouthwash.png",
+      "effect": "Balding",
+      "removes": ["Calming","Calorie-Dense","Explosive","Focused"],
+      "adds": ["Anti-Gravity","Sneaky","Sedating","Jennerising"]
+   },
+   {
+      "name": "Motor Oil",
+      "image": "motoroil.png",
+      "effect": "Slippery",
+      "removes": ["Energizing","Foggy","Energizing","Euphoric","Paranoia","Munchies"],
+      "adds": ["Munchies","Toxic","Schizophrenia","Sedating","Anti-Gravity","Schizophrenia"]
+   },
+   {
+      "name": "Banana",
+      "image": "banana.png",
+      "effect": "Gingeritis",
+      "removes": ["Energizing","Calming","Toxic","Long Faced","Cyclopean","Disorienting","Focused","Paranoia","Smelly"],
+      "adds": ["Thought-Provoking","Sneaky","Smelly","Refreshing","Thought-Provoking","Focused","Seizure-Inducing","Jennerising","Anti-Gravity"]
+   },
+   {
+      "name": "Chili",
+      "image": "chili.png",
+      "effect": "Spicy",
+      "removes": ["Athletic","Anti-Gravity","Sneaky","Munchies","Laxative","Shrinking"],
+      "adds": ["Euphoric","Tropic Thunder","Bright-Eyed","Toxic","Long Faced","Refreshing"]
+   },
+   {
+      "name": "Iodine",
+      "image": "iodine.png",
+      "effect": "Jennerising",
+      "removes": ["Calming","Toxic","Foggy","Calorie-Dense","Euphoric","Refreshing"],
+      "adds": ["Balding","Sneaky","Paranoia","Gingeritis","Seizure-Inducing","Thought-Provoking"]
+   },
+   {
+      "name": "Paracetamol",
+      "image": "para.png",
+      "effect": "Sneaky",
+      "removes": ["Energizing","Calming","Toxic","Spicy","Glowing","Foggy","Munchies","Energizing","Electrifying"],
+      "adds": ["Paranoia","Slippery","Tropic Thunder","Bright-Eyed","Toxic","Calming","Anti-Gravity","Balding","Athletic"]
+   },
+   {
+      "name": "Viagra",
+      "image": "viagra.png",
+      "effect": "Tropic Thunder",
+      "removes": ["Athletic","Euphoric","Laxative","Disorienting"],
+      "adds": ["Sneaky","Bright-Eyed","Calming","Toxic"]
+   },
+   {
+      "name": "Horse Semen",
+      "image": "horsecum.png",
+      "effect": "Long Faced",
+      "removes": ["Anti-Gravity","Gingeritis","Thought-Provoking"],
+      "adds": ["Calming","Refreshing","Electrifying"]
+   },
+   {
+      "name": "Mega Bean",
+      "image": "megabean.png",
+      "effect": "Foggy",
+      "removes": ["Energizing","Calming","Sneaky","Jennerising","Athletic","Slippery","Thought-Provoking","Seizure-Inducing","Focused","Sneaky","Thought-Provoking","Shrinking"],
+      "adds": ["Cyclopean","Glowing","Calming","Paranoia","Laxative","Toxic","Energizing","Focused","Disorienting","Glowing","Cyclopean","Electrifying"]
+   },
+   {
+      "name": "Addy",
+      "image": "addy.png",
+      "effect": "Thought-Provoking",
+      "removes": ["Sedating","Long Faced","Glowing","Foggy","Explosive"],
+      "adds": ["Gingeritis","Electrifying","Refreshing","Energizing","Euphoric"]
+   },
+   {
+      "name": "Battery",
+      "image": "battery.png",
+      "effect": "Bright-Eyed",
+      "removes": ["Munchies","Euphoric","Electrifying","Laxative","Electrifying","Cyclopean","Shrinking"],
+      "adds": ["Tropic Thunder","Zombifying","Euphoric","Calorie-Dense","Euphoric","Glowing","Munchies"]
+   }
+]}

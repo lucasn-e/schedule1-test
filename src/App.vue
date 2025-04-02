@@ -1,10 +1,11 @@
 <template>
-   <div class="container">
+   <div class="container"
+         @dragover="dragoverGlobal"
+         @dragleave.stop="unsetDragTarget">
       v.0.2
       <div class="current-drug-container">
          <div class="current-drug target"
-               @dragenter="setDragTarget"
-               @dragleave.prevent="unsetDragTarget">
+               @dragenter.stop="setDragTarget">
             <div class="name">
                {{ currentProduct.name }}
             </div>
@@ -44,11 +45,15 @@
             <div class="name">
                {{ add.name }}
             </div>
-            <div class="image"
-                  draggable="true"
-                  @dragstart="dragging(add)"
-                  @dragend="applyAdditive(add)">
-               <img :src="getImg(add.image)" />
+            <div class="item-image">
+               <div class="img-container draggable"
+                     @click="applyAdditiveIfMobile(add)"
+                     @dragstart="dragging(add, $event)"
+                     @dragend="applyAdditive(add, $event)"
+                     draggable>
+                  <img class="img"
+                        :src="getImg(add.image)" />
+               </div>
             </div>
             <div class="effect">
                {{ add.effect }}
@@ -84,6 +89,7 @@ const images = require.context('@/assets/images/', false, /\.png$|\.jpg$/)
 export default {
    data() {
       return {
+         isMobile: false,
          history: [],
          attributeList: {},
          basePrice: 70,
@@ -113,6 +119,10 @@ export default {
       }
    },
    methods: {
+      dragoverGlobal(ev) {
+         ev.dataTransfer.dropEffect = "move";
+         ev.preventDefault();
+      },
       getIsActiveRemoval(index, removalArray) {
          return this.currentProduct.attributes.some(att => att === removalArray[index])
       },
@@ -124,10 +134,19 @@ export default {
          const img = images("./" + src);
          return img;
       },
-      dragging(item) {
+      dragging(item, ev) {
+         ev.dataTransfer.setData("text/plain", "");
+         ev.target.classList.add("dragging");
          this.currentAdditive = item;
       },
-      applyAdditive() {
+      applyAdditiveIfMobile(add) {
+         if (!this.isMobile) return;
+         this.currentAdditive = add;
+         this.isCorrectTarget = true;
+         this.applyAdditive(add);
+      },
+      applyAdditive(add, event) {
+         event.target.classList.remove("dragging");
          if (!this.isCorrectTarget) return;
          if (this.currentProduct.attributes.length) {
             this.checkForRemovables();
@@ -168,6 +187,9 @@ export default {
    },
    mounted() {
       this.attributeList = attributeList;
+      if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+         this.isMobile = true;
+      }
    }
 }
 </script>

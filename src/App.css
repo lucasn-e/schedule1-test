@@ -2,12 +2,24 @@
    background-color: #333;
 }
 
+html {
+   width: 100vw;
+   overflow-x: hidden;
+}
+
+body {
+   margin: 0;
+   width: 100%;
+}
+
 #app {
    font-family: Avenir, Helvetica, Arial, sans-serif;
    -webkit-font-smoothing: antialiased;
    -moz-osx-font-smoothing: grayscale;
    text-align: center;
    color: #dcdcdc;
+   width: calc(100% - 50px);
+   padding: 25px;
 }
 
 .container {
@@ -77,6 +89,32 @@ b {
    color: rgb(80, 206, 80);
 }
 
+.history {
+   min-width: 150px;
+}
+.step {
+   padding: 2px 0;
+}
+
+.draggable {
+   cursor: grab;
+}
+
+.draggable.dragging {
+   cursor: grabbing !important;
+}
+
+.img {
+   height: 80px;
+}
+
+.item-image {
+   pointer-events: all;
+   user-select: all;
+   -webkit-user-drag: auto;
+}
+
+
 
 
 .current-drug {
@@ -95,6 +133,31 @@ b {
 
 .attribute {
    white-space: nowrap;
+}
+
+@media screen and (max-width: 1500px) {
+   .items {
+      width: calc(100% - 11px);
+      padding: 5px;
+      grid-template-columns: 1fr 1fr 1fr;
+   }
+   #app {
+      width: calc(100% - 10px);
+      padding: 5px;
+   }
+   .current-drug-container {
+      width: calc(100% - 31px);
+      padding: 15px;
+   }
+}
+@media screen and (max-width: 1000px) {
+   .items {
+      grid-template-columns: 1fr;
+   }
+   .current-drug {
+      padding: 10px;
+      max-width: 400px;
+   }
 }
 
 

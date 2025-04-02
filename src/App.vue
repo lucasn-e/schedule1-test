@@ -1,5 +1,6 @@
 <template>
    <div class="container">
+      v.0.2
       <div class="current-drug-container">
          <div class="current-drug target"
                @dragenter="setDragTarget"

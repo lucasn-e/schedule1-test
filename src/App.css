@@ -92,6 +92,7 @@ b {
 .history {
    min-width: 150px;
 }
+
 .step {
    padding: 2px 0;
 }
@@ -141,22 +142,40 @@ b {
       padding: 5px;
       grid-template-columns: 1fr 1fr 1fr;
    }
+
    #app {
       width: calc(100% - 10px);
       padding: 5px;
    }
+
    .current-drug-container {
       width: calc(100% - 31px);
       padding: 15px;
    }
 }
+
 @media screen and (max-width: 1000px) {
    .items {
       grid-template-columns: 1fr;
    }
+
    .current-drug {
-      padding: 10px;
+      padding: 5px;
       max-width: 400px;
+   }
+
+   .attribute-container {
+      column-gap: 5px;
+   }
+
+   .attributes {
+      padding: 0 0 5px 0;
+   }
+
+   .attribute {
+      font-size: 0.85em;
+      white-space: normal;
+      text-align: left;
    }
 }
 

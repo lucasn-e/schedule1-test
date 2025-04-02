@@ -2,7 +2,7 @@
    <div class="container"
          @dragover="dragoverGlobal"
          @dragleave.stop="unsetDragTarget">
-      v.0.2
+      v.0.3
       <div class="current-drug-container">
          <div class="current-drug target"
                @dragenter.stop="setDragTarget">
@@ -10,7 +10,10 @@
                {{ currentProduct.name }}
             </div>
             <div class="image target">
-               <img class="target"
+               <img class="target meth"
+                     :style="{
+                        filter: `hue-rotate(${rand}deg) saturate(3.5)`
+                     }"
                      :src="getImg('meth.png')" />
             </div>
             <div class="attributes target">
@@ -84,11 +87,15 @@
 <script>
 import additives from "./data/additives.json";
 import attributeList from "./attributes";
+import names from "./data/names.json";
 const images = require.context('@/assets/images/', false, /\.png$|\.jpg$/)
 
 export default {
    data() {
       return {
+         names: {},
+         rand: 0,
+         attributeCache: "",
          isMobile: false,
          history: [],
          attributeList: {},
@@ -119,6 +126,27 @@ export default {
       }
    },
    methods: {
+      generateRandomName() {
+         const prefix = this.randInt(0, 1465);
+         const suffix = this.randInt(0, 109);
+         const prefixes = this.names.prefixes.map(a => a);
+         const suffixes = this.names.suffixes.map(a => a);
+         this.currentProduct.name = `${this.capitaliseFirstLetter(prefixes[prefix])} ${this.capitaliseFirstLetter(suffixes[suffix])}`;
+      },
+      capitaliseFirstLetter(str) {
+         if (str.includes("-")) {
+            let str1 = str.split("-")[0];
+            let str2 = str.split("-")[1];
+
+            str1 = `${str1.substring(0, 1).toUpperCase()}${str1.substring(1, str1.length)}`;
+            str2 = `${str2.substring(0, 1).toUpperCase()}${str2.substring(1, str2.length)}`;
+            return `${str1}-${str2}`;
+         }
+         return `${str.substring(0, 1).toUpperCase()}${str.substring(1, str.length)}`;
+      },
+      randInt(min, max) {
+         return parseInt(Math.random() * (max - min) + min);
+      },
       dragoverGlobal(ev) {
          ev.dataTransfer.dropEffect = "move";
          ev.preventDefault();
@@ -146,7 +174,8 @@ export default {
          this.applyAdditive(add);
       },
       applyAdditive(add, event) {
-         event.target.classList.remove("dragging");
+         this.attributeCache = JSON.stringify(this.currentProduct.attributes);
+         if (event) event.target.classList.remove("dragging");
          if (!this.isCorrectTarget) return;
          if (this.currentProduct.attributes.length) {
             this.checkForRemovables();
@@ -155,6 +184,10 @@ export default {
             if (this.currentProduct.attributes.length !== 8) {
                this.currentProduct.attributes.push(this.currentAdditive.effect);
             }
+         }
+         if (JSON.stringify(this.currentProduct.attributes) !== this.attributeCache) {
+            this.rand = this.randInt(0, 359);
+            this.generateRandomName();
          }
          this.history.push(this.currentAdditive.name);
       },
@@ -187,6 +220,7 @@ export default {
    },
    mounted() {
       this.attributeList = attributeList;
+      this.names = names;
       if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
          this.isMobile = true;
       }

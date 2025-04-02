@@ -6,7 +6,7 @@
       <div class="current-drug-container">
          <div class="current-drug target"
                @dragenter.stop="setDragTarget">
-            <div class="name">
+            <div class="name target">
                {{ currentProduct.name }}
             </div>
             <div class="image target">

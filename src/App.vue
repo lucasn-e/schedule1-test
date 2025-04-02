@@ -127,8 +127,8 @@ export default {
    },
    methods: {
       generateRandomName() {
-         const prefix = this.randInt(0, 1465);
-         const suffix = this.randInt(0, 109);
+         const prefix = this.randInt(0, 1462);
+         const suffix = this.randInt(0, 131);
          const prefixes = this.names.prefixes.map(a => a);
          const suffixes = this.names.suffixes.map(a => a);
          this.currentProduct.name = `${this.capitaliseNames(prefixes[prefix])} ${this.capitaliseNames(suffixes[suffix])}`;

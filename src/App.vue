@@ -131,17 +131,16 @@ export default {
          const suffix = this.randInt(0, 109);
          const prefixes = this.names.prefixes.map(a => a);
          const suffixes = this.names.suffixes.map(a => a);
-         this.currentProduct.name = `${this.capitaliseFirstLetter(prefixes[prefix])} ${this.capitaliseFirstLetter(suffixes[suffix])}`;
+         this.currentProduct.name = `${this.capitaliseNames(prefixes[prefix])} ${this.capitaliseNames(suffixes[suffix])}`;
+      },
+      capitaliseNames(str) {
+         if (str.includes("-")) {
+            let splitString = str.split("-");
+            return `${this.capitaliseFirstLetter(splitString[0])}-${this.capitaliseFirstLetter(splitString[1])}`;
+         }
+         return this.capitaliseFirstLetter(str);
       },
       capitaliseFirstLetter(str) {
-         if (str.includes("-")) {
-            let str1 = str.split("-")[0];
-            let str2 = str.split("-")[1];
-
-            str1 = `${str1.substring(0, 1).toUpperCase()}${str1.substring(1, str1.length)}`;
-            str2 = `${str2.substring(0, 1).toUpperCase()}${str2.substring(1, str2.length)}`;
-            return `${str1}-${str2}`;
-         }
          return `${str.substring(0, 1).toUpperCase()}${str.substring(1, str.length)}`;
       },
       randInt(min, max) {

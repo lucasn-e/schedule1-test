@@ -1,0 +1,38 @@
+[
+   {
+      "name": "OG Kush",
+      "img": "og_kush.png",
+      "baseValue": 34,
+      "baseEffects": ["Calming"]
+   },
+   {
+      "name": "Sour Diesel",
+      "img": "og_kush.png",
+      "baseValue": 40,
+      "baseEffects": ["Refreshing"]
+   },
+   {
+      "name": "Green Crack",
+      "img": "green_crack.png",
+      "baseValue": 35,
+      "baseEffects": ["Energizing"]
+   },
+   {
+      "name": "Granddaddy Purple",
+      "img": "granddaddy_purple.png",
+      "baseValue": 35,
+      "baseEffects": ["Sedating"]
+   },
+   {
+      "name": "Meth",
+      "img": "meth.png",
+      "baseValue": 70,
+      "baseEffects": []
+   },
+   {
+      "name": "Cocaine",
+      "img": "cocaine.png",
+      "baseValue": 180,
+      "baseEffects": []
+   }
+]

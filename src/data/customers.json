@@ -1,0 +1,684 @@
+[
+   {
+      "name": "Kyle Cooley",
+      "img": "kyle_cooley.png",
+      "area": "Northtown",
+      "likes": [
+         "Calming",
+         "Munchies",
+         "Smelly"
+      ],
+      "standards": "Low"
+   },
+   {
+      "name": "Austin Steiner",
+      "img": "austin_steiner.png",
+      "area": "Northtown",
+      "likes": [
+         "Calorie-Dense",
+         "Euphoric",
+         "Munchies"
+      ],
+      "standards": "Low"
+   },
+   {
+      "name": "Jessi Waters",
+      "img": "jessi_waters.png",
+      "area": "Northtown",
+      "likes": [
+         "Energizing",
+         "Paranoia",
+         "Sneaky"
+      ],
+      "standards": "Very Low"
+   },
+   {
+      "name": "Kathy Henderson",
+      "img": "kathy_henderson.png",
+      "area": "Northtown",
+      "likes": [
+         "Athletic",
+         "Energizing",
+         "Focused"
+      ],
+      "standards": "Low"
+   },
+   {
+      "name": "Mick Lubbin",
+      "img": "mick_lubbin.png",
+      "area": "Northtown",
+      "likes": [
+         "Euphoric",
+         "Bright-eyed",
+         "Sneaky"
+      ],
+      "standards": "Low"
+   },
+   {
+      "name": "Sam Thompson",
+      "img": "sam_thompson.png",
+      "area": "Northtown",
+      "likes": [
+         "Munchies",
+         "Athletic",
+         "Smelly"
+      ],
+      "standards": "Low"
+   },
+   {
+      "name": "Peter File",
+      "img": "peter_file.png",
+      "area": "Northtown",
+      "likes": [
+         "Focused",
+         "Refreshing",
+         "Sneaky"
+      ],
+      "standards": "Low"
+   },
+   {
+      "name": "Donna Martin",
+      "img": "donna_martin.png",
+      "area": "Northtown",
+      "likes": [
+         "Refreshing",
+         "Lethal",
+         "Munchies"
+      ],
+      "standards": "Low"
+   },
+   {
+      "name": "Geraldine Poon",
+      "img": "geraldine_poon.png",
+      "area": "Northtown",
+      "likes": [
+         "Balding",
+         "Long Faced",
+         "Sedating"
+      ],
+      "standards": "Very Low"
+   },
+   {
+      "name": "Chloe Bowers",
+      "img": "chloe_bowers.png",
+      "area": "Northtown",
+      "likes": [
+         "Euphoric",
+         "Shrinking",
+         "Munchies"
+      ],
+      "standards": "Low"
+   },
+   {
+      "name": "Peggy Mayers",
+      "img": "peggy_mayers.png",
+      "area": "Northtown",
+      "likes": [
+         "Bright-Eyed",
+         "Refreshing",
+         "Energizing"
+      ],
+      "standards": "Low"
+   },
+   {
+      "name": "Ludwig Meyer",
+      "img": "ludwig_meyer.png",
+      "area": "Northtown",
+      "likes": [
+         "Euphoric",
+         "Refreshing",
+         "Energizing"
+      ],
+      "standards": "Low"
+   },
+   {
+      "name": "Beth Penn",
+      "img": "beth_penn.png",
+      "area": "Northtown",
+      "likes": [
+         "Schizophrenia",
+         "Lethal",
+         "Seizure-Inducing"
+      ],
+      "standards": "Low"
+   },
+   {
+      "name": "Mrs. Ming",
+      "img": "mrs_ming.png",
+      "area": "Northtown",
+      "likes": [
+         "Gingeritis",
+         "Shrinking",
+         "Electrifying"
+      ],
+      "standards": "Low"
+   },
+   {
+      "name": "Trent Sherman",
+      "img": "trent_sherman.png",
+      "area": "Westville",
+      "likes": [
+         "Athletic",
+         "Balding",
+         "Calorie-Dense"
+      ],
+      "standards": "Low"
+   },
+   {
+      "name": "Meg Cooley",
+      "img": "meg_cooley.png",
+      "area": "Westville",
+      "likes": [
+         "Sneaky",
+         "Slippery",
+         "Thought-Provoking"
+      ],
+      "standards": "Low"
+   },
+   {
+      "name": "Joyce Ball",
+      "img": "joyce_ball.png",
+      "area": "Westville",
+      "likes": [
+         "Euphoric",
+         "Thought-Provoking",
+         "Calorie-Dense"
+      ],
+      "standards": "Low"
+   },
+   {
+      "name": "Keith Wagner",
+      "img": "keith_wagner.png",
+      "area": "Westville",
+      "likes": [
+         "Slippery",
+         "Sneaky",
+         "Tropic Thunder"
+      ],
+      "standards": "Very Low"
+   },
+   {
+      "name": "Doris Lubbin",
+      "img": "doris_lubbin.png",
+      "area": "Westville",
+      "likes": [
+         "Spicy",
+         "Tropic Thunder",
+         "Balding"
+      ],
+      "standards": "Low"
+   },
+   {
+      "name": "Jerry Montero",
+      "img": "jerry_montero.png",
+      "area": "Westville",
+      "likes": [
+         "Gingeritis",
+         "Smelly",
+         "Thought-Provoking"
+      ],
+      "standards": "Low"
+   },
+   {
+      "name": "Kim Delaney",
+      "img": "kim_delaney.png",
+      "area": "Westville",
+      "likes": [
+         "Shrinking",
+         "Jennerising",
+         "Focused"
+      ],
+      "standards": "Low"
+   },
+   {
+      "name": "Dean Webster",
+      "img": "dean_webster.png",
+      "area": "Westville",
+      "likes": [
+         "Glowing",
+         "Laxative",
+         "Spicy"
+      ],
+      "standards": "Low"
+   },
+   {
+      "name": "Charles Rowland",
+      "img": "charles_rowland.png",
+      "area": "Westville",
+      "likes": [
+         "Sedating",
+         "Disorienting",
+         "Foggy"
+      ],
+      "standards": "Low"
+   },
+   {
+      "name": "George Greene",
+      "img": "george_greene.png",
+      "area": "Westville",
+      "likes": [
+         "Energizing",
+         "Focused",
+         "Thought-Provoking"
+      ],
+      "standards": "Low"
+   },
+   {
+      "name": "Elizabeth Homley",
+      "img": "elizabeth_homley.png",
+      "area": "Downtown",
+      "likes": [
+         "Sedating",
+         "Tropic Thunder",
+         "Toxic"
+      ],
+      "standards": "Moderate"
+   },
+   {
+      "name": "Jennifer Rivera",
+      "img": "jennifer_rivera.png",
+      "area": "Downtown",
+      "likes": [
+         "Shrinking",
+         "Slippery",
+         "Toxic"
+      ],
+      "standards": "Moderate"
+   },
+   {
+      "name": "Kevin Oakley",
+      "img": "kevin_oakley.png",
+      "area": "Downtown",
+      "likes": [
+         "-",
+         "-",
+         "-"
+      ],
+      "standards": "Moderate"
+   },
+   {
+      "name": "Lucy Pennington",
+      "img": "lucy_pennington.png",
+      "area": "Downtown",
+      "likes": [
+         "Calorie-Dense",
+         "Euphoric",
+         "Glowing"
+      ],
+      "standards": "Moderate"
+   },
+   {
+      "name": "Louis Fourier",
+      "img": "louis_fourier.png",
+      "area": "Downtown",
+      "likes": [
+         "Shrinking",
+         "Seizure-Inducing",
+         "Paranoia"
+      ],
+      "standards": "Moderate"
+   },
+   {
+      "name": "Randy Caulfield",
+      "img": "randy_caulfield.png",
+      "area": "Downtown",
+      "likes": [
+         "-",
+         "-",
+         "-"
+      ],
+      "standards": "Moderate"
+   },
+   {
+      "name": "Eugene Buckley",
+      "img": "eugene_buckley.png",
+      "area": "Downtown",
+      "likes": [
+         "Schizophrenia",
+         "Toxic",
+         "Calming"
+      ],
+      "standards": "Moderate"
+   },
+   {
+      "name": "Greg Figgle",
+      "img": "greg_figgle.png",
+      "area": "Downtown",
+      "likes": [
+         "Euphoric",
+         "Tropic Thunder",
+         "Toxic"
+      ],
+      "standards": "Very Low"
+   },
+   {
+      "name": "Jeff Gilmore",
+      "img": "jeff_gilmore.png",
+      "area": "Downtown",
+      "likes": [
+         "Sedating",
+         "Long Faced",
+         "Laxative"
+      ],
+      "standards": "Moderate"
+   },
+   {
+      "name": "Philip Wentworth",
+      "img": "philip_wentworth.png",
+      "area": "Downtown",
+      "likes": [
+         "Refreshing",
+         "Shrinking",
+         "Foggy"
+      ],
+      "standards": "Moderate"
+   },
+   {
+      "name": "Lisa Gardener",
+      "img": "lisa_gardener.png",
+      "area": "Docks",
+      "likes": [
+         "Laxative",
+         "Schizophrenia",
+         "Anti-Gravity"
+      ],
+      "standards": "Moderate"
+   },
+   {
+      "name": "Anna Chesterfield",
+      "img": "anna_chesterfield.png",
+      "area": "Docks",
+      "likes": [
+         "Refreshing",
+         "Tropic Thunder",
+         "Toxic"
+      ],
+      "standards": "Moderate"
+   },
+   {
+      "name": "Genghis Barn",
+      "img": "genghis_barn.png",
+      "area": "Docks",
+      "likes": [
+         "Electrifying",
+         "Gingeritis",
+         "Athletic"
+      ],
+      "standards": "Very Low"
+   },
+   {
+      "name": "Cranky Frank",
+      "img": "cranky_frank.png",
+      "area": "Docks",
+      "likes": [
+         "Laxative",
+         "Toxic",
+         "Tropic Thunder"
+      ],
+      "standards": "Moderate"
+   },
+   {
+      "name": "Javier Pérez",
+      "img": "javier_perez.png",
+      "area": "Docks",
+      "likes": [
+         "-",
+         "-",
+         "-"
+      ],
+      "standards": "Moderate"
+   },
+   {
+      "name": "Marco Barone",
+      "img": "marco_barone.png",
+      "area": "Docks",
+      "likes": [
+         "Sneaky",
+         "Long Faced",
+         "Refreshing"
+      ],
+      "standards": "Moderate"
+   },
+   {
+      "name": "Melissa Wood",
+      "img": "melissa_wood.png",
+      "area": "Docks",
+      "likes": [
+         "Anti-Gravity",
+         "Refreshing",
+         "Slippery"
+      ],
+      "standards": "Moderate"
+   },
+   {
+      "name": "Mac Cooper",
+      "img": "mac_cooper.png",
+      "area": "Docks",
+      "likes": [
+         "Focused",
+         "Spicy",
+         "Long Faced"
+      ],
+      "standards": "Moderate"
+   },
+   {
+      "name": "Billy Kramer",
+      "img": "billy_kramer.png",
+      "area": "Docks",
+      "likes": [
+         "Spicy",
+         "Schizophrenia",
+         "Long Faced"
+      ],
+      "standards": "Moderate"
+   },
+   {
+      "name": "Chris Sullivan",
+      "img": "chris_sullivan.png",
+      "area": "Suburbia",
+      "likes": [
+         "Sneaky",
+         "Euphoric",
+         "Electrifying"
+      ],
+      "standards": "High"
+   },
+   {
+      "name": "Hank Stevenson",
+      "img": "hank_stevenson.png",
+      "area": "Suburbia",
+      "likes": [
+         "Sneaky",
+         "Toxic",
+         "Schizophrenia"
+      ],
+      "standards": "High"
+   },
+   {
+      "name": "Karen Kennedy",
+      "img": "karen_kennedy.png",
+      "area": "Suburbia",
+      "likes": [
+         "-",
+         "-",
+         "-"
+      ],
+      "standards": "High"
+   },
+   {
+      "name": "Alison Knight",
+      "img": "alison_knight.png",
+      "area": "Suburbia",
+      "likes": [
+         "-",
+         "-",
+         "-"
+      ],
+      "standards": "High"
+   },
+   {
+      "name": "Jeremy Wilkinson",
+      "img": "jeremy_wilkinson.png",
+      "area": "Suburbia",
+      "likes": [
+         "Balding",
+         "Slippery",
+         "Calorie-Dense"
+      ],
+      "standards": "High"
+   },
+   {
+      "name": "Carl Bundy",
+      "img": "carl_bundy.png",
+      "area": "Suburbia",
+      "likes": [
+         "Glowing",
+         "Athletic",
+         "Disorienting"
+      ],
+      "standards": "High"
+   },
+   {
+      "name": "Jackie Stevenson",
+      "img": "jackie_stevenson.png",
+      "area": "Suburbia",
+      "likes": [
+         "-",
+         "-",
+         "-"
+      ],
+      "standards": "High"
+   },
+   {
+      "name": "Harold Colt",
+      "img": "harold_colt.png",
+      "area": "Suburbia",
+      "likes": [
+         "Foggy",
+         "Spicy",
+         "Jennerising"
+      ],
+      "standards": "High"
+   },
+   {
+      "name": "Jack Knight",
+      "img": "jack_knight.png",
+      "area": "Suburbia",
+      "likes": [
+         "Shrinking",
+         "Tought-Provoking",
+         "Lethal"
+      ],
+      "standards": "High"
+   },
+   {
+      "name": "Dennis Kennedy",
+      "img": "dennis_kennedy.png",
+      "area": "Suburbia",
+      "likes": [
+         "Athletic",
+         "Focused",
+         "Bright-eyed"
+      ],
+      "standards": "High"
+   },
+   {
+      "name": "Lily Turner",
+      "img": "lily_turner.png",
+      "area": "Uptown",
+      "likes": [
+         "-",
+         "-",
+         "-"
+      ],
+      "standards": "High"
+   },
+   {
+      "name": "Fiona Hancock",
+      "img": "fiona_hancock.png",
+      "area": "Uptown",
+      "likes": [
+         "Lethal",
+         "Tought-Provoking",
+         "Tropic Thunder"
+      ],
+      "standards": "High"
+   },
+   {
+      "name": "Ray Hoffman",
+      "img": "ray_hoffman.png",
+      "area": "Uptown",
+      "likes": [
+         "-",
+         "-",
+         "-"
+      ],
+      "standards": "High"
+   },
+   {
+      "name": "Jen Heard",
+      "img": "jen_heard.png",
+      "area": "Uptown",
+      "likes": [
+         "Disorienting",
+         "Energizing",
+         "Sneaky"
+      ],
+      "standards": "High"
+   },
+   {
+      "name": "Walter Cussler",
+      "img": "walter_cussler.png",
+      "area": "Uptown",
+      "likes": [
+         "Schizophrenia",
+         "Calming",
+         "Balding"
+      ],
+      "standards": "High"
+   },
+   {
+      "name": "Herbert Bleuball",
+      "img": "herbert_bleuball.png",
+      "area": "Uptown",
+      "likes": [
+         "Slippery",
+         "Foggy",
+         "Explosive"
+      ],
+      "standards": "High"
+   },
+   {
+      "name": "Michael Boog",
+      "img": "michael_boog.png",
+      "area": "Uptown",
+      "likes": [
+         "Jennerising",
+         "Calming",
+         "Schizophrenia"
+      ],
+      "standards": "High"
+   },
+   {
+      "name": "Tobias Wentworth",
+      "img": "tobias_wentworth.png",
+      "area": "Uptown",
+      "likes": [
+         "Lethal",
+         "Disorienting",
+         "Spicy"
+      ],
+      "standards": "High"
+   },
+   {
+      "name": "Pearl Moore",
+      "img": "pearl_moore.png",
+      "area": "Uptown",
+      "likes": [
+         "Schizophrenia",
+         "Gingeritis",
+         "Explosive"
+      ],
+      "standards": "High"
+   }
+]

@@ -2,9 +2,25 @@
    <div class="container"
          @dragover="dragoverGlobal"
          @dragleave.stop="unsetDragTarget">
-      v.0.3
+      v.0.5
       <div class="current-drug-container">
+         <div class="drug-choice">
+            <div class="drug"
+                  v-for="drug in drugs">
+               <div class="button"
+                     @click="selectDrug(drug)">
+                  <div class="icon">
+                     <img class="icon-img"
+                           :src="getImg(drug.img)" />
+                     <div class="icon-title">
+                        {{ drug.name }}
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
          <div class="current-drug target"
+               v-if="currentProduct"
                @dragenter.stop="setDragTarget">
             <div class="name target">
                {{ currentProduct.name }}
@@ -14,7 +30,7 @@
                      :style="{
                         filter: `hue-rotate(${rand}deg) saturate(3.5)`
                      }"
-                     :src="getImg('meth.png')" />
+                     :src="getImg(currentProduct.img)" />
             </div>
             <div class="attributes target">
                <div class="title target"
@@ -39,7 +55,38 @@
             </div>
          </div>
       </div>
-
+      <div class="liked-by">
+         <div class="expander"
+               @click="expandMe">
+            {{ customersWhoLikeCurrentEffects.length }} {{ customersWhoLikeCurrentEffects.length === 0 || customersWhoLikeCurrentEffects.length > 1 ? "People like" : "Person likes" }} this blend.
+         </div>
+         <div class="expand-me"
+               :class="{ open: openExpander }">
+            <div class="customer"
+                  v-for="customer in customersWhoLikeCurrentEffects">
+               <div class="customer-name">
+                  <div class="customer-img">
+                     <img :src="getImg(`${customer.img}`)" />
+                     <div class="person-name">
+                        {{ customer.name }}
+                     </div>
+                  </div>
+               </div>
+               <div class="area"
+                     :class="customer.area">
+                  {{ customer.area }}
+               </div>
+               <div class="likes">
+                  Likes ({{ getLikeCount(customer.likes) }}/3):
+                  <div class="like"
+                        :class="{ liked: like.matched, all: (getLikeCount(customer.likes) === 3) }, styledAttribute(like.effect)"
+                        v-for="like in customer.likes">
+                     {{ like.effect }}
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
       <div v-if="items"
             class="items">
          <div class="item-container"
@@ -85,30 +132,55 @@
 </template>
 
 <script>
-import additives from "./data/additives.json";
 import attributeList from "./attributes";
+
+import additives from "./data/additives.json";
 import names from "./data/names.json";
+import customers from "./data/customers.json";
+import drugs from "./data/drugs.json";
+
 const images = require.context('@/assets/images/', false, /\.png$|\.jpg$/)
 
 export default {
    data() {
       return {
+         drugs: null,
+         openExpander: false,
          names: {},
+         customers: [],
          rand: 0,
          attributeCache: "",
          isMobile: false,
          history: [],
          attributeList: {},
-         basePrice: 70,
+         basePrice: 0,
          isCorrectTarget: false,
          currentAdditive: null,
          currentProduct: {
-            name: "Meth",
-            attributes: []
+            name: "",
+            attributes: [],
+            img: "",
          }
       }
    },
    computed: {
+      customersWhoLikeCurrentEffects() {
+         const cstmrs = customers.filter(customer => {
+            return customer.likes.some(like => {
+               if (!this.currentProduct.attributes || !this.currentProduct.attributes.length) return false;
+               return this.currentProduct.attributes.some(effect => {
+                  if (effect === like.effect) {
+                     like.matched = true;
+                  }
+                  return effect === like.effect
+               });
+            });
+         });
+         cstmrs.forEach(customer => {
+            customer.likeCount = this.getLikeCount(customer.likes);
+         });
+         return cstmrs.sort((a, b) => b.likeCount - a.likeCount);
+      },
       items() {
          if (!additives) return [];
          return additives.additives;
@@ -126,6 +198,25 @@ export default {
       }
    },
    methods: {
+      selectDrug(drug) {
+         this.history = [];
+         this.basePrice = drug.baseValue;
+         this.currentProduct = {
+            name: drug.name,
+            attributes: drug.baseEffects,
+            img: drug.img
+         }
+      },
+      getLikeCount(likes) {
+         let count = 0;
+         likes.forEach(like => {
+            if (like.matched) count++;
+         });
+         return count;
+      },
+      expandMe() {
+         this.openExpander = !this.openExpander;
+      },
       generateRandomName() {
          const prefix = this.randInt(0, 1462);
          const suffix = this.randInt(0, 131);
@@ -154,10 +245,10 @@ export default {
          return this.currentProduct.attributes.some(att => att === removalArray[index])
       },
       styledAttribute(att) {
-         // plep
          return att.replace(" ", "");
       },
       getImg(src) {
+         if (!src.length) return "";
          const img = images("./" + src);
          return img;
       },
@@ -220,6 +311,24 @@ export default {
    mounted() {
       this.attributeList = attributeList;
       this.names = names;
+      this.drugs = drugs;
+      this.customers = customers.map(customer => {
+         customer.likes = [
+            {
+               effect: customer.likes[0],
+               matched: false,
+               style: customer.likes[0].replace(" ", "")
+            }, {
+               effect: customer.likes[1],
+               matched: false,
+               style: customer.likes[1].replace(" ", "")
+            }, {
+               effect: customer.likes[2],
+               matched: false,
+               style: customer.likes[2].replace(" ", "")
+            }];
+      });
+      this.selectDrug(this.drugs[0]);
       if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
          this.isMobile = true;
       }

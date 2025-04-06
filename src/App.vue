@@ -171,6 +171,8 @@ export default {
                return this.currentProduct.attributes.some(effect => {
                   if (effect === like.effect) {
                      like.matched = true;
+                  } else {
+                     like.matched = false;
                   }
                   return effect === like.effect
                });

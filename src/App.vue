@@ -2,7 +2,7 @@
    <div class="container"
          @dragover="dragoverGlobal"
          @dragleave.stop="unsetDragTarget">
-      v.0.5
+      v.0.5.5
       <div class="current-drug-container">
          <div class="drug-choice">
             <div class="drug"

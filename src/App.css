@@ -148,6 +148,7 @@ body {
    padding: 30px;
    position: sticky;
    top: 0;
+   background-color: #333;
 }
 
 .history {

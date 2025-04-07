@@ -7,6 +7,6 @@ npm run build
 git add -A
 git commit -m 'deploy'
 
-git subtree push --prefix dist origin gh-pages
+git subtree push --prefix dist origin gh-pages -f
 
 cd -

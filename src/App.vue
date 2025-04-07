@@ -2,7 +2,7 @@
    <div class="container"
          @dragover="dragoverGlobal"
          @dragleave.stop="unsetDragTarget">
-      v.0.5.5
+      v.0.6
       <div class="current-drug-container">
          <div class="drug-choice">
             <div class="drug"
@@ -48,9 +48,21 @@
             </div>
          </div>
          <div class="history">
-            <b>Sequence:</b>
+            <div class="history-header">
+               <div class="arrow-container"
+                     @click="backInTime"
+                     :class="{ show: historyIndex > 0 }">
+                  <div class="arrow-left"></div>
+               </div>
+               <div><b>Sequence:</b></div>
+               <div @click="forwardInTime"
+                     class="arrow-container"
+                     :class="{ show: historyIndex < history.length - 1 }">
+                  <div class="arrow-right"></div>
+               </div>
+            </div>
             <div class="step"
-                  v-for="(step, idx) in history">
+                  v-for="(step, idx) in sequence">
                {{ idx + 1 }}. {{ step }}
             </div>
          </div>
@@ -139,11 +151,15 @@ import names from "./data/names.json";
 import customers from "./data/customers.json";
 import drugs from "./data/drugs.json";
 
-const images = require.context('@/assets/images/', false, /\.png$|\.jpg$/)
+const images = require.context('@/assets/images/', false, /\.png$|\.jpg$/);
+
+const copy = (elem) => JSON.parse(JSON.stringify(elem));
 
 export default {
    data() {
       return {
+         historyIndex: 0,
+         history: [],
          drugs: null,
          openExpander: false,
          names: {},
@@ -151,7 +167,7 @@ export default {
          rand: 0,
          attributeCache: "",
          isMobile: false,
-         history: [],
+         sequence: [],
          attributeList: {},
          basePrice: 0,
          isCorrectTarget: false,
@@ -199,15 +215,17 @@ export default {
          return Math.ceil(price);
       }
    },
+   // TODO: add save recipe
    methods: {
       selectDrug(drug) {
-         this.history = [];
+         this.sequence = [];
          this.basePrice = drug.baseValue;
          this.currentProduct = {
             name: drug.name,
-            attributes: drug.baseEffects,
+            attributes: copy(drug.baseEffects),
             img: drug.img
          }
+         this.rand = 0;
       },
       getLikeCount(likes) {
          let count = 0;
@@ -220,7 +238,7 @@ export default {
          this.openExpander = !this.openExpander;
       },
       generateRandomName() {
-         const prefix = this.randInt(0, 1462);
+         const prefix = this.randInt(0, 1461);
          const suffix = this.randInt(0, 131);
          const prefixes = this.names.prefixes.map(a => a);
          const suffixes = this.names.suffixes.map(a => a);
@@ -265,7 +283,38 @@ export default {
          this.isCorrectTarget = true;
          this.applyAdditive(add);
       },
+      backInTime() {
+         if (this.history.length < 1) return;
+         if (this.history[this.history.length - 1].sequence.length < this.sequence.length) {
+            this.history.push({
+               sequence: copy(this.sequence),
+               product: copy(this.currentProduct)
+            });
+         }
+
+         this.historyIndex -= 1;
+         this.sequence = copy(this.history[this.historyIndex].sequence);
+         this.currentProduct = copy(this.history[this.historyIndex].product);
+      },
+      forwardInTime() {
+         if (this.historyIndex >= this.history.length - 1) return;
+         this.historyIndex += 1;
+         this.sequence = copy(this.history[this.historyIndex].sequence);
+         this.currentProduct = copy(this.history[this.historyIndex].product);
+      },
       applyAdditive(add, event) {
+         let hasChanges = this.hasRemovables();
+         const testChache = this.attributeCache.length ? JSON.parse(this.attributeCache) : [];
+         if ((hasChanges || !testChache.some(att => att === this.currentAdditive.effect)) && this.currentProduct.attributes.length !== 8) {
+            this.history.push({
+               sequence: copy(this.sequence),
+               product: copy(this.currentProduct),
+            });
+            this.historyIndex += 1;
+            if (this.historyIndex <= this.history.length) {
+               this.history.splice(this.historyIndex, this.history.length);
+            }
+         }
          this.attributeCache = JSON.stringify(this.currentProduct.attributes);
          if (event) event.target.classList.remove("dragging");
          if (!this.isCorrectTarget) return;
@@ -275,13 +324,14 @@ export default {
          if (!this.currentProduct.attributes.find(item => this.currentAdditive.effect === item)) {
             if (this.currentProduct.attributes.length !== 8) {
                this.currentProduct.attributes.push(this.currentAdditive.effect);
+               hasChanges = true;
             }
          }
          if (JSON.stringify(this.currentProduct.attributes) !== this.attributeCache) {
             this.rand = this.randInt(0, 359);
             this.generateRandomName();
          }
-         this.history.push(this.currentAdditive.name);
+         this.sequence.push(this.currentAdditive.name);
       },
       setDragTarget() {
          this.isCorrectTarget = true;
@@ -293,7 +343,25 @@ export default {
             this.isCorrectTarget = false;
          }
       },
+      hasRemovables() {
+         let hasChanges = false;
+         this.currentProduct.attributes.forEach(att => {
+            this.currentAdditive.removes.some((e, idx) => {
+               if (e == att) {
+                  if (this.currentProduct.attributes.find(att => att === this.currentAdditive.adds[idx])) {
+                     return false;
+                  }
+                  hasChanges = true;
+                  return true;
+               } else {
+                  return false;
+               }
+            });
+         });
+         return hasChanges;
+      },
       checkForRemovables() {
+         let hasChanges = false;
          this.currentProduct.attributes.forEach(att => {
             this.currentAdditive.removes.some((e, idx) => {
                if (e == att) {
@@ -302,12 +370,14 @@ export default {
                   }
                   this.currentProduct.attributes = this.currentProduct.attributes.filter(a => a !== e);
                   this.currentProduct.attributes.push(this.currentAdditive.adds[idx]);
+                  hasChanges = true;
                   return true;
                } else {
                   return false;
                }
             });
          });
+         return hasChanges;
       }
    },
    mounted() {

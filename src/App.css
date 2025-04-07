@@ -18,10 +18,12 @@ body {
    padding: 25px;
    background-color: #333;
 }
+
 .drug {
    display: flex;
    justify-content: center;
 }
+
 .button {
    cursor: pointer;
    user-select: none;
@@ -29,20 +31,24 @@ body {
    padding: 5px;
    transition: .25s;
    background-color: #333;
-   
+
 }
+
 .button:hover {
    background-color: #666;
 }
+
 .icon {
    display: flex;
    flex-wrap: nowrap;
    justify-content: flex-start;
    align-items: center;
 }
+
 .icon-img {
    height: 25px;
 }
+
 .icon-title {
    font-size: 0.9rem;
 }
@@ -255,6 +261,53 @@ b {
       white-space: normal;
       text-align: left;
    }
+}
+
+.history-header {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.arrow-container {
+   position: relative;
+   opacity: 0;
+   pointer-events: none;
+}
+.arrow-container.show {
+   opacity: 1;
+   pointer-events: all;
+}
+
+.arrow-left {
+   cursor: pointer;
+   border-left: 5px solid #dcdcdc;
+   height: 10px;
+   width: 10px;
+   border-top: 5px solid #dcdcdc;
+   transform: rotate(315deg);
+   position: absolute;
+   left: 10px;
+   top: -10px;
+   filter: drop-shadow(0px 0px 0px white);
+   transition: 0.25s;
+}
+.arrow-right {
+   cursor: pointer;
+   border-left: 5px solid #dcdcdc;
+   height: 10px;
+   width: 10px;
+   border-top: 5px solid #dcdcdc;
+   transform: rotate(135deg);
+   position: absolute;
+   right: 10px;
+   top: -10px;
+   filter: drop-shadow(0px 0px 0px white);
+   transition: 0.25s;
+}
+
+.arrow-left:hover, .arrow-right:hover {
+   filter: drop-shadow(0px 0px 5px white);
 }
 
 

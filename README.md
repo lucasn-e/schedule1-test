@@ -1,3 +1,5 @@
+NOTE: I'm a bit lazy so I generally work on this maybe an hour or two every other day. if something's terribly amiss, feel free to open an issue and point it out and I'll get to it
+
 Schedule1Mixer is a Vue app to simulate the drug-mixing from the game Schedule 1 (https://store.steampowered.com/app/3164500/Schedule_I/)
 
 It's hosted on gh-pages (https://lucasn-e.github.io/schedule1mixer/)
